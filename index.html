@@ -55,7 +55,6 @@
       window.addEventListener("keydown", playSound);
       const allKeys = document.querySelectorAll(".key");
       allKeys.forEach((k) => {
-        console.log("k", k);
         k.addEventListener("click", (e) => {
           e.keyCode = k.getAttribute("data-key");
           playSound(e);
