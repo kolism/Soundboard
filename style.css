@@ -10,7 +10,7 @@ body {
 }
 
 body {
-  background: url("https://source.unsplash.com/random/3000x2000");
+  background: url("https://source.unsplash.com/random/2000x2000");
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
@@ -33,6 +33,8 @@ body {
   border-radius: 10px;
   margin: 1rem;
   border: 4px solid black;
+  user-select: none;
+  cursor: pointer;
 }
 
 .playing {

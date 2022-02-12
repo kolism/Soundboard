@@ -54,9 +54,14 @@
       //remove playing class when audio finished
       window.addEventListener("keydown", playSound);
       const allKeys = document.querySelectorAll(".key");
-      allKeys.forEach((k) =>
-        k.addEventListener("transitionend", removeTransition)
-      );
+      allKeys.forEach((k) => {
+        console.log("k", k);
+        k.addEventListener("click", (e) => {
+          e.keyCode = k.getAttribute("data-key");
+          playSound(e);
+        });
+        k.addEventListener("transitionend", removeTransition);
+      });
     </script>
   </body>
 </html>
