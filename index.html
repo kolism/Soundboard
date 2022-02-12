@@ -41,9 +41,10 @@
         const audioElem = document.querySelector(`audio[data-key="${key}"]`);
         const keyElem = document.querySelector(`div[data-key="${key}"]`);
         if (!audioElem) return;
+
         audioElem.currentTime = 0;
         audioElem.play();
-        keyElem.classList.add("playing");
+        keyElem.classList.toggle("playing");
       }
 
       function removeTransition(e) {
