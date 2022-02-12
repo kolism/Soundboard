@@ -13,11 +13,11 @@
       </div>
       <div data-key="83" class="key">
         <kbd>S</kbd>
-        <span class="sound">deep_drum</span>
+        <span class="sound">deep drum</span>
       </div>
       <div data-key="68" class="key">
         <kbd>D</kbd>
-        <span class="sound">dry</span>
+        <span class="sound">dry drum</span>
       </div>
       <div data-key="70" class="key">
         <kbd>F</kbd>
@@ -34,6 +34,29 @@
     <audio data-key="70" src="sounds/hat.wav"></audio>
     <audio data-key="71" src="sounds/tribal.wav"></audio>
 
-    <script></script>
+    <script>
+      function playSound(e) {
+        let key = e.keyCode;
+        //find element matching key
+        const audioElem = document.querySelector(`audio[data-key="${key}"]`);
+        const keyElem = document.querySelector(`div[data-key="${key}"]`);
+        if (!audioElem) return;
+        audioElem.currentTime = 0;
+        audioElem.play();
+        keyElem.classList.add("playing");
+      }
+
+      function removeTransition(e) {
+        if (e.propertyName !== "transform") return; //skip all other transitions
+        this.classList.remove("playing");
+      }
+
+      //remove playing class when audio finished
+      window.addEventListener("keydown", playSound);
+      const allKeys = document.querySelectorAll(".key");
+      allKeys.forEach((k) =>
+        k.addEventListener("transitionend", removeTransition)
+      );
+    </script>
   </body>
 </html>

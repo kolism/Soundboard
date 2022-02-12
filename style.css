@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url("https://source.unsplash.com/random/3000x2000");
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.keys {
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.key {
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  width: 100px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 10px;
+  margin: 1rem;
+  border: 4px solid black;
+}
+
+.playing {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px aqua;
+  border-color: aqua;
+}
+
+kbd {
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+}
+
+.sound {
+  text-transform: uppercase;
+  font-weight: 400;
+  color: orange;
+}
